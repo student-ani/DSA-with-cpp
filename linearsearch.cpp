@@ -1,30 +1,38 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-int main()
+
+void search(int arr[], int key, int n)
 {
-    int i, a[50], search;
-    int k=0, r;
-    cout<<"Enter range: ";
-    cin>>r;
-    cout << "Enter "<<r <<" numbers: ";
-    for (i = 0; i < r; i++)
+    int count = 0;
+    for (int i = 0; i < n; i++)
     {
-        cin >> a[i];
-    } 
-    cout << "Enter a number that you want to search: " << endl;
-    cin >> search;
-    for (i = 0; i < r; i++)
-    {
-        if (a[i] == search)
+        if (arr[i] == key)
         {
-            cout << "Number is found at " << i + 1;
-            k++;
+            cout << "Number is present at " << i + 1;
+            count++;
             break;
         }
-    }    
-        if(k==0)
-        {
-            cout<<"Number is not found";
-        }
+    }
+    if (count == 0)
+    {
+        cout << "Number is absent";
+    }
+}
+int main()
+{
+    int key;
+    int n;
+    cout << "Enter number range: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter Numbers: ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    cout << "Enter the number for search: ";
+    cin >> key;
+    search(arr, key, n);
+
     return 0;
 }
