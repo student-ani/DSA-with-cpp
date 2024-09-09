@@ -1,22 +1,28 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    int temp;
-    int arr[5] = {5,4,0,2,1};
-    for(int i=0; i<5; i++)
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
     {
-        if(arr[i]>arr[i+1]){
-            temp = arr[i];
-            arr[i] = arr[i+1];
-            arr[i+1] = temp;
-        } else {
-            
+        cin >> arr[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                swap(arr[j], arr[j + 1]);
+            }
         }
-        i++;
     }
-    for(int i=0; i<5; i++){
-        cout<<arr[i]<<" ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
     }
-
+    cout << endl;
+    return 0;
 }
