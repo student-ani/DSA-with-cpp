@@ -1,0 +1,1 @@
+/*Imagine you've successfully placed 4 queens on a chessboard. you try to place the 5th queen in the same row as the first queen. if it's possible the 5th queen is placed at the row of 1st queen else give a message.*/
